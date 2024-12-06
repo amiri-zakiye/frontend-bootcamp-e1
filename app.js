@@ -8,7 +8,9 @@ function debounce(callback, delay) {
     };
 }
 
-input.addEventListener("input", debounce((e) => {
+const inputEventHandler = debounce((e) => {
     const value = e.target.value.trim();
     alert(`The value is "${value}" and it's ${value.length} characters long!`);
-}, 500))
+}, 500)
+
+input.addEventListener("input", inputEventHandler)
